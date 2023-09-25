@@ -1,0 +1,660 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9DB90C922AC1839700192342 /* fastboardSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB90C912AC1839700192342 /* fastboardSampleApp.swift */; };
+		9DB90C942AC1839700192342 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB90C932AC1839700192342 /* ContentView.swift */; };
+		9DB90C962AC1839900192342 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DB90C952AC1839900192342 /* Assets.xcassets */; };
+		9DB90C992AC1839900192342 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DB90C982AC1839900192342 /* Preview Assets.xcassets */; };
+		9DB90CA32AC1839900192342 /* fastboardSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB90CA22AC1839900192342 /* fastboardSampleTests.swift */; };
+		9DB90CAD2AC1839900192342 /* fastboardSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB90CAC2AC1839900192342 /* fastboardSampleUITests.swift */; };
+		9DB90CAF2AC1839900192342 /* fastboardSampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB90CAE2AC1839900192342 /* fastboardSampleUITestsLaunchTests.swift */; };
+		9DB90CE32AC1885700192342 /* YYModel.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB90CE22AC1885600192342 /* YYModel.xcframework */; };
+		9DB90CE42AC1885700192342 /* YYModel.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB90CE22AC1885600192342 /* YYModel.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9DB90CE92AC1886200192342 /* NTLBridge.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB90CE62AC1886200192342 /* NTLBridge.xcframework */; };
+		9DB90CEA2AC1886200192342 /* NTLBridge.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB90CE62AC1886200192342 /* NTLBridge.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9DB90CEB2AC1886200192342 /* Fastboard.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB90CE72AC1886200192342 /* Fastboard.xcframework */; };
+		9DB90CEC2AC1886300192342 /* Fastboard.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB90CE72AC1886200192342 /* Fastboard.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9DB90CED2AC1886300192342 /* Whiteboard.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB90CE82AC1886200192342 /* Whiteboard.xcframework */; };
+		9DB90CEE2AC1886300192342 /* Whiteboard.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB90CE82AC1886200192342 /* Whiteboard.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9DB90C9F2AC1839900192342 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DB90C862AC1839700192342 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9DB90C8D2AC1839700192342;
+			remoteInfo = fastboardSample;
+		};
+		9DB90CA92AC1839900192342 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DB90C862AC1839700192342 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9DB90C8D2AC1839700192342;
+			remoteInfo = fastboardSample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9DB90CE52AC1885700192342 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9DB90CE42AC1885700192342 /* YYModel.xcframework in Embed Frameworks */,
+				9DB90CEC2AC1886300192342 /* Fastboard.xcframework in Embed Frameworks */,
+				9DB90CEE2AC1886300192342 /* Whiteboard.xcframework in Embed Frameworks */,
+				9DB90CEA2AC1886200192342 /* NTLBridge.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9DB90C8E2AC1839700192342 /* fastboardSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fastboardSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DB90C912AC1839700192342 /* fastboardSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fastboardSampleApp.swift; sourceTree = "<group>"; };
+		9DB90C932AC1839700192342 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9DB90C952AC1839900192342 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9DB90C982AC1839900192342 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9DB90C9E2AC1839900192342 /* fastboardSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fastboardSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DB90CA22AC1839900192342 /* fastboardSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fastboardSampleTests.swift; sourceTree = "<group>"; };
+		9DB90CA82AC1839900192342 /* fastboardSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fastboardSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DB90CAC2AC1839900192342 /* fastboardSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fastboardSampleUITests.swift; sourceTree = "<group>"; };
+		9DB90CAE2AC1839900192342 /* fastboardSampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fastboardSampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9DB90CBD2AC184E400192342 /* FastboardPackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FastboardPackage; sourceTree = "<group>"; };
+		9DB90CBF2AC185E200192342 /* Whiteboard.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Whiteboard.xcframework; path = FastboardPackage/artifacts/Whiteboard.xcframework; sourceTree = "<group>"; };
+		9DB90CC02AC185E200192342 /* Fastboard.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Fastboard.xcframework; path = FastboardPackage/artifacts/Fastboard.xcframework; sourceTree = "<group>"; };
+		9DB90CC12AC185E200192342 /* YYModel.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = YYModel.xcframework; path = FastboardPackage/artifacts/YYModel.xcframework; sourceTree = "<group>"; };
+		9DB90CC22AC185E200192342 /* NTLBridge.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NTLBridge.xcframework; path = FastboardPackage/artifacts/NTLBridge.xcframework; sourceTree = "<group>"; };
+		9DB90CD52AC187FD00192342 /* NTLBridge.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NTLBridge.xcframework; path = ../FastboardFrameWork/NTLBridge.xcframework; sourceTree = "<group>"; };
+		9DB90CD62AC187FD00192342 /* Fastboard.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Fastboard.xcframework; path = ../FastboardFrameWork/Fastboard.xcframework; sourceTree = "<group>"; };
+		9DB90CD72AC187FD00192342 /* YYModel.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = YYModel.xcframework; path = ../FastboardFrameWork/YYModel.xcframework; sourceTree = "<group>"; };
+		9DB90CD82AC187FD00192342 /* Whiteboard.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Whiteboard.xcframework; path = ../FastboardFrameWork/Whiteboard.xcframework; sourceTree = "<group>"; };
+		9DB90CE22AC1885600192342 /* YYModel.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = YYModel.xcframework; path = FastboardFrameworks/YYModel.xcframework; sourceTree = "<group>"; };
+		9DB90CE62AC1886200192342 /* NTLBridge.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NTLBridge.xcframework; path = FastboardFrameworks/NTLBridge.xcframework; sourceTree = "<group>"; };
+		9DB90CE72AC1886200192342 /* Fastboard.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Fastboard.xcframework; path = FastboardFrameworks/Fastboard.xcframework; sourceTree = "<group>"; };
+		9DB90CE82AC1886200192342 /* Whiteboard.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Whiteboard.xcframework; path = FastboardFrameworks/Whiteboard.xcframework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9DB90C8B2AC1839700192342 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DB90CE32AC1885700192342 /* YYModel.xcframework in Frameworks */,
+				9DB90CEB2AC1886200192342 /* Fastboard.xcframework in Frameworks */,
+				9DB90CED2AC1886300192342 /* Whiteboard.xcframework in Frameworks */,
+				9DB90CE92AC1886200192342 /* NTLBridge.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DB90C9B2AC1839900192342 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DB90CA52AC1839900192342 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9DB90C852AC1839700192342 = {
+			isa = PBXGroup;
+			children = (
+				9DB90CBB2AC184A300192342 /* Packages */,
+				9DB90C902AC1839700192342 /* fastboardSample */,
+				9DB90CA12AC1839900192342 /* fastboardSampleTests */,
+				9DB90CAB2AC1839900192342 /* fastboardSampleUITests */,
+				9DB90C8F2AC1839700192342 /* Products */,
+				9DB90CBE2AC185E100192342 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9DB90C8F2AC1839700192342 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9DB90C8E2AC1839700192342 /* fastboardSample.app */,
+				9DB90C9E2AC1839900192342 /* fastboardSampleTests.xctest */,
+				9DB90CA82AC1839900192342 /* fastboardSampleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9DB90C902AC1839700192342 /* fastboardSample */ = {
+			isa = PBXGroup;
+			children = (
+				9DB90C912AC1839700192342 /* fastboardSampleApp.swift */,
+				9DB90C932AC1839700192342 /* ContentView.swift */,
+				9DB90C952AC1839900192342 /* Assets.xcassets */,
+				9DB90C972AC1839900192342 /* Preview Content */,
+			);
+			path = fastboardSample;
+			sourceTree = "<group>";
+		};
+		9DB90C972AC1839900192342 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9DB90C982AC1839900192342 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9DB90CA12AC1839900192342 /* fastboardSampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				9DB90CA22AC1839900192342 /* fastboardSampleTests.swift */,
+			);
+			path = fastboardSampleTests;
+			sourceTree = "<group>";
+		};
+		9DB90CAB2AC1839900192342 /* fastboardSampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9DB90CAC2AC1839900192342 /* fastboardSampleUITests.swift */,
+				9DB90CAE2AC1839900192342 /* fastboardSampleUITestsLaunchTests.swift */,
+			);
+			path = fastboardSampleUITests;
+			sourceTree = "<group>";
+		};
+		9DB90CBB2AC184A300192342 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				9DB90CBD2AC184E400192342 /* FastboardPackage */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		9DB90CBE2AC185E100192342 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9DB90CE72AC1886200192342 /* Fastboard.xcframework */,
+				9DB90CE62AC1886200192342 /* NTLBridge.xcframework */,
+				9DB90CE82AC1886200192342 /* Whiteboard.xcframework */,
+				9DB90CE22AC1885600192342 /* YYModel.xcframework */,
+				9DB90CD62AC187FD00192342 /* Fastboard.xcframework */,
+				9DB90CD52AC187FD00192342 /* NTLBridge.xcframework */,
+				9DB90CD82AC187FD00192342 /* Whiteboard.xcframework */,
+				9DB90CD72AC187FD00192342 /* YYModel.xcframework */,
+				9DB90CC02AC185E200192342 /* Fastboard.xcframework */,
+				9DB90CC22AC185E200192342 /* NTLBridge.xcframework */,
+				9DB90CBF2AC185E200192342 /* Whiteboard.xcframework */,
+				9DB90CC12AC185E200192342 /* YYModel.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9DB90C8D2AC1839700192342 /* fastboardSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DB90CB22AC1839900192342 /* Build configuration list for PBXNativeTarget "fastboardSample" */;
+			buildPhases = (
+				9DB90C8A2AC1839700192342 /* Sources */,
+				9DB90C8B2AC1839700192342 /* Frameworks */,
+				9DB90C8C2AC1839700192342 /* Resources */,
+				9DB90CE52AC1885700192342 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = fastboardSample;
+			productName = fastboardSample;
+			productReference = 9DB90C8E2AC1839700192342 /* fastboardSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9DB90C9D2AC1839900192342 /* fastboardSampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DB90CB52AC1839900192342 /* Build configuration list for PBXNativeTarget "fastboardSampleTests" */;
+			buildPhases = (
+				9DB90C9A2AC1839900192342 /* Sources */,
+				9DB90C9B2AC1839900192342 /* Frameworks */,
+				9DB90C9C2AC1839900192342 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9DB90CA02AC1839900192342 /* PBXTargetDependency */,
+			);
+			name = fastboardSampleTests;
+			productName = fastboardSampleTests;
+			productReference = 9DB90C9E2AC1839900192342 /* fastboardSampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9DB90CA72AC1839900192342 /* fastboardSampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DB90CB82AC1839900192342 /* Build configuration list for PBXNativeTarget "fastboardSampleUITests" */;
+			buildPhases = (
+				9DB90CA42AC1839900192342 /* Sources */,
+				9DB90CA52AC1839900192342 /* Frameworks */,
+				9DB90CA62AC1839900192342 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9DB90CAA2AC1839900192342 /* PBXTargetDependency */,
+			);
+			name = fastboardSampleUITests;
+			productName = fastboardSampleUITests;
+			productReference = 9DB90CA82AC1839900192342 /* fastboardSampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9DB90C862AC1839700192342 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					9DB90C8D2AC1839700192342 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					9DB90C9D2AC1839900192342 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 9DB90C8D2AC1839700192342;
+					};
+					9DB90CA72AC1839900192342 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 9DB90C8D2AC1839700192342;
+					};
+				};
+			};
+			buildConfigurationList = 9DB90C892AC1839700192342 /* Build configuration list for PBXProject "fastboardSample" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9DB90C852AC1839700192342;
+			productRefGroup = 9DB90C8F2AC1839700192342 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9DB90C8D2AC1839700192342 /* fastboardSample */,
+				9DB90C9D2AC1839900192342 /* fastboardSampleTests */,
+				9DB90CA72AC1839900192342 /* fastboardSampleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9DB90C8C2AC1839700192342 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DB90C992AC1839900192342 /* Preview Assets.xcassets in Resources */,
+				9DB90C962AC1839900192342 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DB90C9C2AC1839900192342 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DB90CA62AC1839900192342 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9DB90C8A2AC1839700192342 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DB90C942AC1839700192342 /* ContentView.swift in Sources */,
+				9DB90C922AC1839700192342 /* fastboardSampleApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DB90C9A2AC1839900192342 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DB90CA32AC1839900192342 /* fastboardSampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DB90CA42AC1839900192342 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DB90CAD2AC1839900192342 /* fastboardSampleUITests.swift in Sources */,
+				9DB90CAF2AC1839900192342 /* fastboardSampleUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9DB90CA02AC1839900192342 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9DB90C8D2AC1839700192342 /* fastboardSample */;
+			targetProxy = 9DB90C9F2AC1839900192342 /* PBXContainerItemProxy */;
+		};
+		9DB90CAA2AC1839900192342 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9DB90C8D2AC1839700192342 /* fastboardSample */;
+			targetProxy = 9DB90CA92AC1839900192342 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9DB90CB02AC1839900192342 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9DB90CB12AC1839900192342 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9DB90CB32AC1839900192342 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"fastboardSample/Preview Content\"";
+				DEVELOPMENT_TEAM = R6ZTXZ43YW;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.artiumacademy.agora.fastboardSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9DB90CB42AC1839900192342 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"fastboardSample/Preview Content\"";
+				DEVELOPMENT_TEAM = R6ZTXZ43YW;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.artiumacademy.agora.fastboardSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9DB90CB62AC1839900192342 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R6ZTXZ43YW;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.artiumacademy.agora.fastboardSampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fastboardSample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/fastboardSample";
+			};
+			name = Debug;
+		};
+		9DB90CB72AC1839900192342 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R6ZTXZ43YW;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.artiumacademy.agora.fastboardSampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fastboardSample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/fastboardSample";
+			};
+			name = Release;
+		};
+		9DB90CB92AC1839900192342 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R6ZTXZ43YW;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.artiumacademy.agora.fastboardSampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = fastboardSample;
+			};
+			name = Debug;
+		};
+		9DB90CBA2AC1839900192342 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R6ZTXZ43YW;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.artiumacademy.agora.fastboardSampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = fastboardSample;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9DB90C892AC1839700192342 /* Build configuration list for PBXProject "fastboardSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DB90CB02AC1839900192342 /* Debug */,
+				9DB90CB12AC1839900192342 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DB90CB22AC1839900192342 /* Build configuration list for PBXNativeTarget "fastboardSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DB90CB32AC1839900192342 /* Debug */,
+				9DB90CB42AC1839900192342 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DB90CB52AC1839900192342 /* Build configuration list for PBXNativeTarget "fastboardSampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DB90CB62AC1839900192342 /* Debug */,
+				9DB90CB72AC1839900192342 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DB90CB82AC1839900192342 /* Build configuration list for PBXNativeTarget "fastboardSampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DB90CB92AC1839900192342 /* Debug */,
+				9DB90CBA2AC1839900192342 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9DB90C862AC1839700192342 /* Project object */;
+}

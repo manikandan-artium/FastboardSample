@@ -1,0 +1,540 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Fastboard
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+@_exported import Fastboard
+import Foundation
+import Swift
+import UIKit
+import Whiteboard
+import _Concurrency
+import _StringProcessing
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class AppearanceManager : ObjectiveC.NSObject {
+  @objc public static let shared: Fastboard.AppearanceManager
+  @objc public func commitUpdate()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class CompactFastRoomOverlay : ObjectiveC.NSObject, Fastboard.FastRoomOverlay, Fastboard.FastPanelDelegate {
+  @objc public static var showActivityIndicatorWhenReconnecting: Swift.Bool
+  @objc public func update(roomPhase: Fastboard.FastRoomPhase)
+  @objc public func dismissAllSubPanels()
+  @objc public static var defaultCompactAppliance: [Whiteboard.WhiteApplianceNameKey]
+  @objc public func invalidAllLayout()
+  @objc public func update(boxState: Whiteboard.WhiteWindowBoxState?)
+  @objc public func setupWith(room: Whiteboard.WhiteRoom, fastboardView: Fastboard.FastRoomView, direction: Fastboard.OperationBarDirection)
+  @objc public func updateControlBarLayout(direction: Fastboard.OperationBarDirection)
+  @objc public func initUIWith(appliance: Whiteboard.WhiteApplianceNameKey?, shape: Whiteboard.WhiteApplianceShapeTypeKey?)
+  @objc public func update(strokeColor: UIKit.UIColor)
+  @objc public func update(strokeWidth: Swift.Float)
+  @objc public func update(pageState: Whiteboard.WhitePageState)
+  @objc public func update(undoEnable: Swift.Bool)
+  @objc public func update(redoEnable: Swift.Bool)
+  @objc public func setAllPanel(hide: Swift.Bool)
+  @objc public func setPanelItemHide(item: Fastboard.FastRoomDefaultOperationIdentifier, hide: Swift.Bool)
+  @objc public func itemWillBeExecuted(fastPanel: Fastboard.FastRoomPanel, item: any Fastboard.FastRoomOperationItem)
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension Fastboard.CompactFastRoomOverlay {
+  @objc dynamic public var colorAndStrokePanel: Fastboard.FastRoomPanel {
+    @objc get
+  }
+  @objc dynamic public var operationPanel: Fastboard.FastRoomPanel {
+    @objc get
+  }
+  @objc dynamic public var deleteSelectionPanel: Fastboard.FastRoomPanel {
+    @objc get
+  }
+  @objc dynamic public var undoRedoPanel: Fastboard.FastRoomPanel {
+    @objc get
+  }
+  @objc dynamic public var scenePanel: Fastboard.FastRoomPanel {
+    @objc get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class Fastboard : ObjectiveC.NSObject {
+  @objc public static var globalFastboardRatio: CoreFoundation.CGFloat
+  @objc public class func createFastRoom(withFastRoomConfig config: Fastboard.FastRoomConfiguration) -> Fastboard.FastRoom
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public protocol FastPanelControl {
+  @objc func setAllPanel(hide: Swift.Bool)
+  @objc func setPanelItemHide(item: Fastboard.FastRoomDefaultOperationIdentifier, hide: Swift.Bool)
+  @objc func dismissAllSubPanels()
+}
+@objc public protocol FastPanelDelegate {
+  @objc func itemWillBeExecuted(fastPanel: Fastboard.FastRoomPanel, item: any Fastboard.FastRoomOperationItem)
+}
+@objc @_hasMissingDesignatedInitializers public class FastRoom : ObjectiveC.NSObject {
+  @objc public static var followSystemPencilBehavior: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc final public let view: Fastboard.FastRoomView
+  @objc public var whiteSDK: Whiteboard.WhiteSDK!
+  @objc public var room: Whiteboard.WhiteRoom? {
+    @objc get
+    @objc set
+  }
+  @objc weak public var delegate: (any Fastboard.FastRoomDelegate)?
+  @objc public var commonDelegate: (any Whiteboard.WhiteCommonCallbackDelegate)? {
+    @objc get
+    @objc set
+  }
+  @objc public var roomDelegate: (any Whiteboard.WhiteRoomCallbackDelegate)? {
+    @objc get
+    @objc set
+  }
+  @objc public func joinRoom()
+  @objc public func disconnectRoom()
+  @objc public func updateWritable(_ writable: Swift.Bool, completion: (((any Swift.Error)?) -> Swift.Void)?)
+  public func joinRoom(completionHandler: ((Swift.Result<Whiteboard.WhiteRoom, Fastboard.FastRoomError>) -> Swift.Void)? = nil)
+  @objc deinit
+}
+extension Fastboard.FastRoom : Whiteboard.WhiteCommonCallbackDelegate {
+  @objc dynamic public func throwError(_ error: any Swift.Error)
+  @objc dynamic public func sdkSetupFail(_ error: any Swift.Error)
+}
+extension Fastboard.FastRoom : Whiteboard.WhiteRoomCallbackDelegate {
+  @objc dynamic public func firePhaseChanged(_ phase: Whiteboard.WhiteRoomPhase)
+  @objc dynamic public func fireRoomStateChanged(_ modifyState: Whiteboard.WhiteRoomState!)
+  @objc dynamic public func fireDisconnectWithError(_ error: Swift.String!)
+  @objc dynamic public func fireKicked(withReason reason: Swift.String!)
+  @objc dynamic public func fireCanUndoStepsUpdate(_ canUndoSteps: Swift.Int)
+  @objc dynamic public func fireCanRedoStepsUpdate(_ canRedoSteps: Swift.Int)
+}
+extension Fastboard.FastRoom : Fastboard.FastPanelControl {
+  @objc dynamic public func dismissAllSubPanels()
+  @objc dynamic public func setAllPanel(hide: Swift.Bool)
+  @objc dynamic public func setPanelItemHide(item: Fastboard.FastRoomDefaultOperationIdentifier, hide: Swift.Bool)
+}
+extension Fastboard.FastRoom {
+  @objc dynamic public func insertMedia(_ src: Foundation.URL, title: Swift.String, completionHandler: ((Swift.String) -> Swift.Void)? = nil)
+  @objc dynamic public func insertImg(_ src: Foundation.URL, imageSize: CoreFoundation.CGSize)
+  @objc dynamic public func insertPptx(_ pages: [Whiteboard.WhitePptPage], title: Swift.String, completionHandler: ((Swift.String) -> Swift.Void)? = nil)
+  @objc dynamic public func insertPptx(uuid: Swift.String, url: Swift.String, title: Swift.String, completionHandler: ((Swift.String) -> Swift.Void)? = nil)
+  @objc dynamic public func insertStaticDocument(_ pages: [Whiteboard.WhitePptPage], title: Swift.String, completionHandler: ((Swift.String) -> Swift.Void)? = nil)
+}
+extension Fastboard.FastRoom : UIKit.UIPencilInteractionDelegate {
+  @available(iOS 12.1, *)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func pencilInteractionDidTap(_ interaction: UIKit.UIPencilInteraction)
+}
+@objc @_inheritsConvenienceInitializers public class FastRoomConfiguration : ObjectiveC.NSObject {
+  @objc final public let whiteSdkConfiguration: Whiteboard.WhiteSdkConfiguration
+  @objc final public let whiteRoomConfig: Whiteboard.WhiteRoomConfig
+  @objc public var customOverlay: (any Fastboard.FastRoomOverlay)?
+  @objc public init(appIdentifier: Swift.String, roomUUID: Swift.String, roomToken: Swift.String, region: Fastboard.Region, userUID: Swift.String, userPayload: Fastboard.FastUserPayload? = nil)
+  @available(*, deprecated, message: "use the designed init instead")
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class FastRoomControlBar : UIKit.UIView {
+  public enum NarrowStyle {
+    case none
+    case narrowMoreThan(count: Swift.Int)
+  }
+  @_Concurrency.MainActor(unsafe) public var narrowStyle: Fastboard.FastRoomControlBar.NarrowStyle {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public func forceUpdate(button: UIKit.UIButton, visible: Swift.Bool)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var itemWidth: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var borderWidth: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var commonRadius: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var direction: UIKit.NSLayoutConstraint.Axis {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var borderMask: QuartzCore.CACornerMask {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) public init(direction: UIKit.NSLayoutConstraint.Axis, borderMask: QuartzCore.CACornerMask, views: [UIKit.UIView])
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class FastRoomDefaultOperationItem : ObjectiveC.NSObject {
+  @objc public static var defaultColors: [UIKit.UIColor]
+  @objc public static func clean() -> any Fastboard.FastRoomOperationItem
+  @objc public static func deleteSelectionItem() -> any Fastboard.FastRoomOperationItem
+  @objc public static func strokeWidthItem() -> any Fastboard.FastRoomOperationItem
+  @objc public static func redoItem() -> any Fastboard.FastRoomOperationItem
+  @objc public static func undoItem() -> any Fastboard.FastRoomOperationItem
+  @objc public static func previousPageItem() -> any Fastboard.FastRoomOperationItem
+  @objc public static func nextPageItem() -> any Fastboard.FastRoomOperationItem
+  @objc public static func newPageItem() -> any Fastboard.FastRoomOperationItem
+  @objc public static func selectableApplianceItem(_ appliance: Whiteboard.WhiteApplianceNameKey, shape: Whiteboard.WhiteApplianceShapeTypeKey? = nil) -> any Fastboard.FastRoomOperationItem
+  @objc public static func pageIndicatorItem() -> any Fastboard.FastRoomOperationItem
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public enum FastRoomDefaultOperationType : Swift.Int {
+  case appliance = 0
+  case shape
+  case color
+  case deleteSelection
+  case strokeWidth
+  case clean
+  case redo
+  case undo
+  case newPage
+  case previousPage
+  case nextPage
+  case pageIndicator
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class FastRoomDefaultOperationIdentifier : ObjectiveC.NSObject {
+  @objc public var identifier: Swift.String {
+    @objc get
+  }
+  @objc public class func applice(key: Whiteboard.WhiteApplianceNameKey, shape: Whiteboard.WhiteApplianceShapeTypeKey?) -> Fastboard.FastRoomDefaultOperationIdentifier
+  @objc public class func color(_ color: UIKit.UIColor) -> Fastboard.FastRoomDefaultOperationIdentifier
+  @objc public class func operationType(_ type: Fastboard.FastRoomDefaultOperationType) -> Fastboard.FastRoomDefaultOperationIdentifier?
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class FastRoomDefaultTheme : ObjectiveC.NSObject {
+  @objc public class var defaultLightTheme: Fastboard.FastRoomThemeAsset {
+    @objc get
+  }
+  @objc public static var defaultDarkTheme: Fastboard.FastRoomThemeAsset {
+    @objc get
+  }
+  @available(iOS 13, *)
+  @objc public static var defaultAutoTheme: Fastboard.FastRoomThemeAsset {
+    @objc get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public protocol FastRoomDelegate {
+  @objc func fastboardDidJoinRoomSuccess(_ fastboard: Fastboard.FastRoom, room: Whiteboard.WhiteRoom)
+  @objc func fastboardDidOccurError(_ fastboard: Fastboard.FastRoom, error: Fastboard.FastRoomError)
+  @objc func fastboardUserKickedOut(_ fastboard: Fastboard.FastRoom, reason: Swift.String)
+  @objc func fastboardPhaseDidUpdate(_ fastboard: Fastboard.FastRoom, phase: Fastboard.FastRoomPhase)
+  @objc optional func fastboardDidSetupOverlay(_ fastboard: Fastboard.FastRoom, overlay: (any Fastboard.FastRoomOverlay)?)
+}
+@objc public enum FastRoomErrorType : Swift.Int {
+  case setupSDK = 0
+  case joinRoom = 1000
+  case disconnected = 2000
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @objc public class FastRoomError : Foundation.NSError {
+  @objc override dynamic public var localizedDescription: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+@objc public protocol FastRoomOperationItem {
+  @objc var action: ((Whiteboard.WhiteRoom, Any?) -> Swift.Void) { get }
+  @objc var room: Whiteboard.WhiteRoom? { get set }
+  @objc var associatedView: UIKit.UIView? { get }
+  @objc var identifier: Swift.String? { get }
+  @objc func buildView(interrupter: ((any Fastboard.FastRoomOperationItem) -> Swift.Void)?) -> UIKit.UIView
+  @objc func setEnable(_ enable: Swift.Bool)
+}
+@_hasMissingDesignatedInitializers public class IndicatorItem : Fastboard.FastRoomOperationItem {
+  @objc public var action: (Whiteboard.WhiteRoom, Any?) -> Swift.Void
+  @objc public var room: Whiteboard.WhiteRoom?
+  @objc public var associatedView: UIKit.UIView?
+  @objc public var identifier: Swift.String?
+  @objc public func buildView(interrupter: ((any Fastboard.FastRoomOperationItem) -> Swift.Void)?) -> UIKit.UIView
+  @objc public func setEnable(_ enable: Swift.Bool)
+  @objc deinit
+}
+public class JustExecutionItem : Fastboard.FastRoomOperationItem {
+  public init(image: UIKit.UIImage, action: @escaping ((Whiteboard.WhiteRoom, Any?) -> Swift.Void), identifier: Swift.String?)
+  @objc public var identifier: Swift.String?
+  @objc public var action: ((Whiteboard.WhiteRoom, Any?) -> Swift.Void)
+  @objc weak public var associatedView: UIKit.UIView? {
+    @objc get
+  }
+  @objc weak public var room: Whiteboard.WhiteRoom?
+  @objc public func setEnable(_ enable: Swift.Bool)
+  @objc public func buildView(interrupter: ((any Fastboard.FastRoomOperationItem) -> Swift.Void)?) -> UIKit.UIView
+  @objc deinit
+}
+public class SliderOperationItem : Fastboard.FastRoomOperationItem {
+  public init(value: Swift.Float, action: @escaping ((Whiteboard.WhiteRoom, Any?) -> Swift.Void), sliderConfig: ((UIKit.UISlider) -> Swift.Void)?, identifier: Swift.String?)
+  @objc public var identifier: Swift.String?
+  @objc public var action: ((Whiteboard.WhiteRoom, Any?) -> Swift.Void)
+  @objc weak public var associatedView: UIKit.UIView? {
+    @objc get
+  }
+  @objc weak public var room: Whiteboard.WhiteRoom?
+  @objc public func setEnable(_ enable: Swift.Bool)
+  @objc public func buildView(interrupter: ((any Fastboard.FastRoomOperationItem) -> Swift.Void)?) -> UIKit.UIView
+  @objc deinit
+}
+public class ColorItem : Fastboard.FastRoomOperationItem {
+  public init(color: UIKit.UIColor)
+  @objc public func setEnable(_ enable: Swift.Bool)
+  @objc public var room: Whiteboard.WhiteRoom?
+  @objc public var identifier: Swift.String?
+  @objc public var associatedView: UIKit.UIView? {
+    @objc get
+  }
+  @objc public var action: ((Whiteboard.WhiteRoom, Any?) -> Swift.Void)
+  @objc public func buildView(interrupter: ((any Fastboard.FastRoomOperationItem) -> Swift.Void)?) -> UIKit.UIView
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class ApplianceItem : Fastboard.FastRoomOperationItem {
+  @objc public func setEnable(_ enable: Swift.Bool)
+  @objc public var identifier: Swift.String?
+  @objc public var action: ((Whiteboard.WhiteRoom, Any?) -> Swift.Void)
+  @objc weak public var associatedView: UIKit.UIView? {
+    @objc get
+  }
+  @objc weak public var room: Whiteboard.WhiteRoom?
+  @objc public func buildView(interrupter: ((any Fastboard.FastRoomOperationItem) -> Swift.Void)?) -> UIKit.UIView
+  @objc deinit
+}
+@objc public class SubOpsItem : ObjectiveC.NSObject, Fastboard.FastRoomOperationItem {
+  @objc public init(subOps: [any Fastboard.FastRoomOperationItem])
+  @objc public func setEnable(_ enable: Swift.Bool)
+  @objc public var identifier: Swift.String?
+  @objc public var action: (Whiteboard.WhiteRoom, Any?) -> Swift.Void
+  @objc weak public var associatedView: UIKit.UIView?
+  @objc weak public var room: Whiteboard.WhiteRoom?
+  @objc public func buildView(interrupter: ((any Fastboard.FastRoomOperationItem) -> Swift.Void)?) -> UIKit.UIView
+  @objc deinit
+}
+@objc public enum OperationBarDirection : Swift.Int {
+  case left = 0
+  case right
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol FastRoomOverlay : Fastboard.FastPanelControl {
+  @objc func setupWith(room: Whiteboard.WhiteRoom, fastboardView: Fastboard.FastRoomView, direction: Fastboard.OperationBarDirection)
+  @objc func invalidAllLayout()
+  @objc func updateControlBarLayout(direction: Fastboard.OperationBarDirection)
+  @objc func initUIWith(appliance: Whiteboard.WhiteApplianceNameKey?, shape: Whiteboard.WhiteApplianceShapeTypeKey?)
+  @objc func update(strokeColor: UIKit.UIColor)
+  @objc func update(strokeWidth: Swift.Float)
+  @objc func update(pageState: Whiteboard.WhitePageState)
+  @objc func update(undoEnable: Swift.Bool)
+  @objc func update(redoEnable: Swift.Bool)
+  @objc func update(boxState: Whiteboard.WhiteWindowBoxState?)
+  @objc func update(roomPhase: Fastboard.FastRoomPhase)
+  @available(iOS 12.1, *)
+  @objc optional func respondTo(pencilTap: UIKit.UIPencilPreferredAction)
+}
+@objc public class FastRoomPanel : ObjectiveC.NSObject {
+  public static var enablePanelAnimation: Swift.Bool
+  @objc public init(items: [any Fastboard.FastRoomOperationItem])
+  @objc public var flatItems: [any Fastboard.FastRoomOperationItem] {
+    @objc get
+  }
+  @objc public var items: [any Fastboard.FastRoomOperationItem]
+  @objc weak public var delegate: (any Fastboard.FastPanelDelegate)?
+  @objc weak public var view: Fastboard.FastRoomControlBar?
+  @objc public func setItemHide(fromKey key: Fastboard.FastRoomDefaultOperationIdentifier, hide: Swift.Bool)
+  @objc public func deselectAll()
+  @objc public func updateStrokeWidth(_ width: Swift.Float)
+  @objc public func updateSelectedColor(_ color: UIKit.UIColor)
+  @objc public func updateWithApplianceOutside(_ appliance: Whiteboard.WhiteApplianceNameKey, shape: Whiteboard.WhiteApplianceShapeTypeKey?)
+  @objc public func setup(room: Whiteboard.WhiteRoom, direction: UIKit.NSLayoutConstraint.Axis = .vertical, mask: QuartzCore.CACornerMask = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner, .layerMinXMinYCorner, .layerMinXMaxYCorner]) -> Fastboard.FastRoomControlBar
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class FastRoomPanelItemButton : UIKit.UIButton {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var isSelected: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var indicatorInset: UIKit.UIEdgeInsets {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) public var hasSubOps: Swift.Bool {
+    get
+    set
+  }
+  public enum Style {
+    case selectableAppliance
+    case justExecution
+    case color(UIKit.UIColor)
+  }
+  @_Concurrency.MainActor(unsafe) public var style: Fastboard.FastRoomPanelItemButton.Style {
+    get
+    set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var rawImage: UIKit.UIImage? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var rawSelectedImage: UIKit.UIImage? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @objc deinit
+}
+@objc public enum FastRoomPhase : Swift.Int {
+  case connecting = 0
+  case connected
+  case reconnecting
+  case disconnecting
+  case disconnected
+  case unknown
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc open class FastRoomWhiteboardAssets : ObjectiveC.NSObject {
+  @objc public init(whiteboardBackgroundColor: UIKit.UIColor, containerColor: UIKit.UIColor)
+  @objc open var whiteboardBackgroundColor: UIKit.UIColor
+  @objc open var containerColor: UIKit.UIColor
+  @objc deinit
+}
+@objc open class FastRoomPanelItemAssets : ObjectiveC.NSObject {
+  @objc public init(normalIconColor: UIKit.UIColor, selectedIconColor: UIKit.UIColor, selectedIconBgColor: UIKit.UIColor, highlightColor: UIKit.UIColor, highlightBgColor: UIKit.UIColor, disableColor: UIKit.UIColor, subOpsIndicatorColor: UIKit.UIColor, pageTextLabelColor: UIKit.UIColor, selectedBackgroundCornerradius: CoreFoundation.CGFloat, selectedBackgroundEdgeinset: UIKit.UIEdgeInsets)
+  @objc open var selectedBackgroundCornerRadius: CoreFoundation.CGFloat
+  @objc open var selectedBackgroundEdgeinset: UIKit.UIEdgeInsets
+  @objc open var normalIconColor: UIKit.UIColor
+  @objc open var selectedIconColor: UIKit.UIColor
+  @objc open var selectedIconBgColor: UIKit.UIColor
+  @objc open var highlightColor: UIKit.UIColor
+  @objc open var highlightBgColor: UIKit.UIColor
+  @objc open var disableColor: UIKit.UIColor
+  @objc open var subOpsIndicatorColor: UIKit.UIColor
+  @objc open var pageTextLabelColor: UIKit.UIColor
+  @objc deinit
+}
+@objc open class FastRoomControlBarAssets : ObjectiveC.NSObject {
+  @objc public init(backgroundColor: UIKit.UIColor, borderColor: UIKit.UIColor, effectStyle: UIKit.UIBlurEffect? = nil)
+  @objc open var backgroundColor: UIKit.UIColor
+  @objc open var borderColor: UIKit.UIColor
+  @objc open var effectStyle: UIKit.UIBlurEffect?
+  @objc deinit
+}
+@objc open class FastRoomThemeAsset : ObjectiveC.NSObject {
+  @objc public init(whiteboardAssets: Fastboard.FastRoomWhiteboardAssets, controlBarAssets: Fastboard.FastRoomControlBarAssets, panelItemAssets: Fastboard.FastRoomPanelItemAssets)
+  @objc open var whiteboardAssets: Fastboard.FastRoomWhiteboardAssets
+  @objc open var controlBarAssets: Fastboard.FastRoomControlBarAssets
+  @objc open var panelItemAssets: Fastboard.FastRoomPanelItemAssets
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class FastRoomThemeManager : ObjectiveC.NSObject {
+  @objc public static let shared: Fastboard.FastRoomThemeManager
+  @objc public func updateIcons(using bundle: Foundation.Bundle)
+  @objc public func apply(_ theme: Fastboard.FastRoomThemeAsset)
+  @objc deinit
+}
+@objc @_Concurrency.MainActor(unsafe) public class FastRoomView : UIKit.UIView, Fastboard.FastPanelControl {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var operationBarDirection: Fastboard.OperationBarDirection {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var overlay: (any Fastboard.FastRoomOverlay)?
+  @objc @_Concurrency.MainActor(unsafe) public init(overlay: (any Fastboard.FastRoomOverlay)?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @objc @_Concurrency.MainActor(unsafe) public var whiteboardView: Whiteboard.WhiteBoardView!
+  @_Concurrency.MainActor(unsafe) @objc public func setAllPanel(hide: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc public func setPanelItemHide(item: Fastboard.FastRoomDefaultOperationIdentifier, hide: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc public func dismissAllSubPanels()
+  @objc deinit
+}
+@objc public class FastUserPayload : ObjectiveC.NSObject {
+  public init(nickName: Swift.String)
+  public init(nickName: Swift.String, avatar: Swift.String)
+  @objc deinit
+}
+@objc(FastRegion) public enum Region : Swift.Int {
+  case CN = 0
+  case US
+  case SG
+  case IN
+  case GB
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class RegularFastRoomOverlay : ObjectiveC.NSObject, Fastboard.FastRoomOverlay, Fastboard.FastPanelDelegate {
+  @objc public static var showActivityIndicatorWhenReconnecting: Swift.Bool
+  @objc public func update(roomPhase: Fastboard.FastRoomPhase)
+  @available(iOS 12.1, *)
+  @objc public func respondTo(pencilTap: UIKit.UIPencilPreferredAction)
+  @objc public func dismissAllSubPanels()
+  @objc public static var customOperationPanel: (() -> Fastboard.FastRoomPanel)?
+  @objc public static var shapeItems: [any Fastboard.FastRoomOperationItem]
+  @objc public func invalidAllLayout()
+  @objc public func update(boxState: Whiteboard.WhiteWindowBoxState?)
+  @objc public func setupWith(room: Whiteboard.WhiteRoom, fastboardView: Fastboard.FastRoomView, direction: Fastboard.OperationBarDirection)
+  @objc public func updateControlBarLayout(direction: Fastboard.OperationBarDirection)
+  @objc public func initUIWith(appliance: Whiteboard.WhiteApplianceNameKey?, shape: Whiteboard.WhiteApplianceShapeTypeKey?)
+  @objc public func update(strokeColor: UIKit.UIColor)
+  @objc public func update(strokeWidth: Swift.Float)
+  @objc public func update(pageState: Whiteboard.WhitePageState)
+  @objc public func update(undoEnable: Swift.Bool)
+  @objc public func update(redoEnable: Swift.Bool)
+  @objc public func setAllPanel(hide: Swift.Bool)
+  @objc public func setPanelItemHide(item: Fastboard.FastRoomDefaultOperationIdentifier, hide: Swift.Bool)
+  @objc public func itemWillBeExecuted(fastPanel: Fastboard.FastRoomPanel, item: any Fastboard.FastRoomOperationItem)
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension Fastboard.RegularFastRoomOverlay {
+  @objc dynamic public var operationPanel: Fastboard.FastRoomPanel {
+    @objc get
+  }
+  @objc dynamic public var deleteSelectionPanel: Fastboard.FastRoomPanel {
+    @objc get
+  }
+  @objc dynamic public var undoRedoPanel: Fastboard.FastRoomPanel {
+    @objc get
+  }
+  @objc dynamic public var scenePanel: Fastboard.FastRoomPanel {
+    @objc get
+  }
+  public static var defaultOperationPanelItems: [any Fastboard.FastRoomOperationItem] {
+    get
+  }
+}
+extension Fastboard.FastRoomDefaultOperationType : Swift.Equatable {}
+extension Fastboard.FastRoomDefaultOperationType : Swift.Hashable {}
+extension Fastboard.FastRoomDefaultOperationType : Swift.RawRepresentable {}
+extension Fastboard.FastRoomErrorType : Swift.Equatable {}
+extension Fastboard.FastRoomErrorType : Swift.Hashable {}
+extension Fastboard.FastRoomErrorType : Swift.RawRepresentable {}
+extension Fastboard.OperationBarDirection : Swift.Equatable {}
+extension Fastboard.OperationBarDirection : Swift.Hashable {}
+extension Fastboard.OperationBarDirection : Swift.RawRepresentable {}
+extension Fastboard.FastRoomPhase : Swift.Equatable {}
+extension Fastboard.FastRoomPhase : Swift.Hashable {}
+extension Fastboard.FastRoomPhase : Swift.RawRepresentable {}
+extension Fastboard.Region : Swift.Equatable {}
+extension Fastboard.Region : Swift.Hashable {}
+extension Fastboard.Region : Swift.RawRepresentable {}
